@@ -9,7 +9,6 @@ source as (
 renamed as (
 
     select
-        _line,
         date_date,
         orders_id,
         pdt_id,
