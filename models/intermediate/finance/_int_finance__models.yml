@@ -3,5 +3,18 @@
 version: 2
 
 models:
-  - name: total_revenue_sales
-    description: Sales table with the total revenue per sale
+  - name: sales_with_product_prices
+    description: Sales table with the product prices
+    columns:
+      - name: date_date
+        description: date of the sale
+      - name: orders_id
+        description: id of the order associated with the sale
+      - name: revenue
+        description: revenue of the sale
+      - name: product_id
+        description: id of the product associated with the sale
+      - name: quantity
+        description: quantity of product sold
+      - name: product_price
+        description: unitary price of the product sold
