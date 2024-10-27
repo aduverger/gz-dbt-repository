@@ -1,0 +1,15 @@
+ # _crm__sources.yml
+
+ version: 2
+
+ sources:
+   - name: crm
+     schema: fvt_crm
+     description: Raw data extracted from our CRM tool, about sales, products, etc.
+     tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: Sales
+      - name: products
+        identifier: raw_gz_product
+        description: Products

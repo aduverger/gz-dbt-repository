@@ -1,0 +1,28 @@
+# _crm__models.yml
+
+version: 2
+
+models:
+  - name: sales
+    columns:
+      - name: date_date
+        description: Sale's date
+        tests:
+          - not_null
+      - name: orders_id
+        description: Id of the order associated with this sale
+      - name: pdt_id
+        description: Id of the product associated with this sale
+      - name: quantity
+        description: Quantity of product pdt_id sold 
+      - name: revenue
+        description: revenue from the sale of one product
+  - name: products
+    columns:
+      - name: product_id
+        description: unique Id of the product
+        tests:
+          - unique
+          - not_null
+      - name: purchase_price
+        description: Purchase price for the product
