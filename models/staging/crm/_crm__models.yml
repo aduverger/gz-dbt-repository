@@ -17,3 +17,12 @@ models:
         description: Quantity of product pdt_id sold 
       - name: revenue
         description: revenue from the sale of one product
+  - name: products
+    columns:
+      - name: product_id
+        description: unique Id of the product
+        tests:
+          - unique
+          - not_null
+      - name: purchase_price
+        description: Purchase price for the product

@@ -1,0 +1,7 @@
+# _int_finance_models.yml
+
+version: 2
+
+models:
+  - name: total_revenue_sales
+    description: Sales table with the total revenue per sale
