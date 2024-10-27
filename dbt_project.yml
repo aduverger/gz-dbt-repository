@@ -39,11 +39,11 @@ models:
   gz_dbt_repository:
     staging:
       +materialized: view
-      +schema: 'stg'
+      crm:
+        +database: dbt_crm_stg
     intermediate:
       +materialized: ephemeral
-      +schema: int
     marts:
       +materialized: table
       finance:
-        +schema: finance
+        +database: dbt_finance
