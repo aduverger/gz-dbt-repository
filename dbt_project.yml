@@ -40,7 +40,7 @@ models:
     staging:
       +materialized: view
       crm:
-        +schema: crm_stg
+        +schema: stg_crm
     intermediate:
       +materialized: ephemeral
     marts:
