@@ -40,10 +40,10 @@ models:
     staging:
       +materialized: view
       crm:
-        +schema: prod_crm_stg
+        +schema: crm_stg
     intermediate:
       +materialized: ephemeral
     marts:
       +materialized: table
       finance:
-        +schema: prod_finance
+        +schema: finance
