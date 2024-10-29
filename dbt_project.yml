@@ -35,15 +35,15 @@ clean-targets:         # directories to be removed by `dbt clean`
 # continue to be built as views. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 
-# models:
-#   gz_dbt_repository:
-#     staging:
-#       +materialized: view
-#       crm:
-#         +schema: stg_crm
-#     intermediate:
-#       +materialized: ephemeral
-#     marts:
-#       +materialized: table
-#       finance:
-#         +schema: finance
+models:
+  gz_dbt_repository:
+    staging:
+      +materialized: view
+      crm:
+        +schema: stg_crm
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+      finance:
+        +schema: finance
