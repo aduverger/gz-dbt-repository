@@ -11,6 +11,8 @@ models:
         description: Id of the order associated with this sale
       - name: pdt_id
         description: Id of the product associated with this sale
+        tests:
+          - not_null
       - name: quantity
         description: Quantity of product pdt_id sold 
       - name: revenue
