@@ -1,9 +1,7 @@
-# _crm__models.yml
-
 version: 2
 
 models:
-  - name: sales
+  - name: stg_crm__sales
     columns:
       - name: date_date
         description: Sale's date
@@ -13,13 +11,15 @@ models:
         description: Id of the order associated with this sale
       - name: pdt_id
         description: Id of the product associated with this sale
+        tests:
+          - not_null
       - name: quantity
         description: Quantity of product pdt_id sold 
       - name: revenue
         description: revenue from the sale of one product
-  - name: products
+  - name: stg_crm__products
     columns:
-      - name: product_id
+      - name: products_id
         description: unique Id of the product
         tests:
           - unique

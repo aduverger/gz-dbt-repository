@@ -1,18 +1,22 @@
-with
+with 
 
-    source as (select * from {{ source("crm", "sales") }}),
+source as (
 
-    renamed as (
+    select * from {{ source('crm', 'sales') }}
 
-        select
-            date_date,
-            orders_id,
-            pdt_id,
-            quantity,
-            cast(replace(revenue, ',', '.') as float64) as revenue,
-        from source
+),
 
-    )
+renamed as (
 
-select *
-from renamed
+    select
+        date_date,
+        orders_id,
+        pdt_id,
+        quantity,
+        CAST(REPLACE(revenue, ',', '.') AS FLOAT64) as revenue,
+
+    from source
+
+)
+
+select * from renamed

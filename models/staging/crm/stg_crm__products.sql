@@ -9,8 +9,8 @@ source as (
 renamed as (
 
     select
-        products_id as product_id,
-        purch_se_price as purchase_price
+        products_id,
+        purch_se_price as purchase_price,
 
     from source
 

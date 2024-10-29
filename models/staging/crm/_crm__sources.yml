@@ -1,15 +1,19 @@
- # _crm__sources.yml
+version: 2
 
- version: 2
-
- sources:
-   - name: crm
-     schema: fvt_crm
-     description: Raw data extracted from our CRM tool, about sales, products, etc.
-     tables:
-      - name: sales
-        identifier: raw_gz_sales
-        description: Sales
+sources:
+  - name: crm
+    schema: fvt_crm
+    description: Data from our CRM, extracted with FiveTran
+    tables:
       - name: products
         identifier: raw_gz_product
-        description: Products
+        columns:
+          - name: products_id
+            description: Id of my product
+            tests:
+              - unique
+              - not_null
+          - name: purch_se_price
+            description: Price of the product
+      - name: sales
+        identifier: raw_gz_sales
