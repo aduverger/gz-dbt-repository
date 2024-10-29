@@ -21,7 +21,7 @@ sales_products as (
         (quantity * purchase_price) as total_purchase_price,
         ROUND(revenue - quantity * purchase_price, 2) as margin,
     from products
-    left join sales on products.products_id = sales.pdt_id
+    inner join sales on products.products_id = sales.pdt_id
 )
 
 select * from sales_products
