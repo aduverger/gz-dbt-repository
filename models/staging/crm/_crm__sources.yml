@@ -7,13 +7,28 @@ sources:
     tables:
       - name: products
         identifier: raw_gz_product
+        description: "Products' table: 1 line per product"
         columns:
           - name: products_id
-            description: Id of my product
+            description: Unique id of a product
             tests:
               - unique
               - not_null
           - name: purch_se_price
-            description: Price of the product
+            description: Price of a product
       - name: sales
         identifier: raw_gz_sales
+        description: "Sales' table: 1 line per sale. 1 sale is related to only one order and one product."
+        columns:
+          - name: date_date
+            description: Sale's date
+            tests:
+              - not_null
+        loaded_at_field: "CAST(PARSE_DATE('%d/%m/%Y', date_date) AS TIMESTAMP)"
+        freshness:
+          warn_after: {count: 90, period: day}
+        tests:
+          - unique:
+              column_name: "pdt_id || '-' || orders_id"
+
+        
