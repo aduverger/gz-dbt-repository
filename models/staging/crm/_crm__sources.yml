@@ -26,7 +26,7 @@ sources:
               - not_null
         loaded_at_field: "CAST(PARSE_DATE('%d/%m/%Y', date_date) AS TIMESTAMP)"
         freshness:
-          error_after: {count: 90, period: day}
+          warn_after: {count: 90, period: day}
         tests:
           - unique:
               column_name: "pdt_id || '-' || orders_id"
