@@ -40,10 +40,10 @@ models:
     staging:
       +materialized: view
       crm:
-        +schema: "{{ 'stg_crm' if target.name == 'Production' else target.name }}"
+        +schema: "{{ env_var('DBT_STG_CRM_SCHEMA') if env_var('DBT_STG_CRM_SCHEMA', '') else none}}"
     intermediate:
-      +materialized: "{{ 'ephemeral' if target.name == 'Production' else 'view' }}"
+      +materialized: "{{ env_var('DBT_INT_MATERIALIZED') if env_var('DBT_INT_MATERIALIZED', '') else none}}"
     marts:
       +materialized: table
       finance:
-        +schema: "{{ 'finance' if target.name == 'Production' else none }}"
+        +schema: "{{ env_var('DBT_MRT_FINANCE_SCHEMA') if env_var('DBT_MRT_FINANCE_SCHEMA', '') else none}}"
