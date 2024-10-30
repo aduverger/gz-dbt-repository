@@ -1,28 +1,48 @@
 version: 2
 
 models:
-  - name: stg_crm__sales
-    columns:
-      - name: date_date
-        description: Sale's date
-        tests:
-          - not_null
-      - name: orders_id
-        description: Id of the order associated with this sale
-      - name: pdt_id
-        description: Id of the product associated with this sale
-        tests:
-          - not_null
-      - name: quantity
-        description: Quantity of product pdt_id sold 
-      - name: revenue
-        description: revenue from the sale of one product
   - name: stg_crm__products
+    description: ""
     columns:
       - name: products_id
+        data_type: int64
         description: unique Id of the product
         tests:
           - unique
           - not_null
+
       - name: purchase_price
+        data_type: float64
         description: Purchase price for the product
+
+  - name: stg_crm__sales
+    description: ""
+    columns:
+      - name: date_date
+        data_type: string
+        description: "Sales's date"
+        tests:
+          - not_null
+
+      - name: orders_id
+        data_type: int64
+        description: Id of the order associated with this sale
+
+      - name: pdt_id
+        data_type: int64
+        description: Id of the product associated with this sale
+        tests:
+          - not_null
+
+      - name: quantity
+        data_type: int64
+        description: Quantity of product pdt_id sold 
+
+      - name: revenue
+        data_type: float64
+        description: ""
+
+      - name: quantity
+        description: Quantity of product pdt_id sold 
+      - name: revenue
+        description: revenue from the sale of one product
