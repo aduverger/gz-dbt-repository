@@ -39,7 +39,8 @@ models:
   gz_dbt_repository:
     staging:
       +materialized: view
-      +schema: stg
+      crm:
+        +schema: stg_crm
     intermediate:
       +materialized: ephemeral
     marts:
