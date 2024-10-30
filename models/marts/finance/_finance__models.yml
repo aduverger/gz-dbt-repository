@@ -2,3 +2,5 @@ version: 2
 
 models:
   - name: daily_sales_products
+    description: Daily sales of products
+     
