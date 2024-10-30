@@ -3,4 +3,5 @@ version: 2
 models:
   - name: daily_sales_products
     description: Daily sales of products
-     
+  - name: sales_per_product
+    description: Sales aggregated for each product
