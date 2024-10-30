@@ -40,7 +40,7 @@ models:
     staging:
       +materialized: view
       crm:
-        +schema: "{{ 'stg_crm' if target.name == 'Production' else none }}"
+        +schema: "{{ 'stg_crm' if target.name == 'Production' else target.name }}"
     intermediate:
       +materialized: "{{ 'ephemeral' if target.name == 'Production' else 'view' }}"
     marts:
